@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food Online</title>
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="robots" value="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=PT+Serif:ital@1&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0px 0px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        header{
+            
+        }
+        .navbar{
+            /* background-color: black; */
+            border-bottom: 0.5px solid lightgrey;
+            height: 80px !important;
+            /* box-shadow: 10px; */
+        }
+        .name{
+            display: inline-block;
+            margin-top: 25px ;
+            color: #fc8019;
+            margin-left: 150px;
+            font-weight: 700;
+            font-size: 26px;
+            transition: 0.2s all ease-in-out;
+            letter-spacing: 2px;
+        }
+        .name:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        
+        .navbar ul{
+            overflow: auto;
+            list-style: none;
+            text-align: right;
+            margin-right: 30px;
+            margin-top: -60px;
+            padding: 0px 0px;
+            
+        }
+
+        .navbar ul li{
+            margin: 30px 12px;
+            display: inline-block;
+        }
+        
+        .navbar ul li a{
+            font-size: 15px;
+            font-weight: bold ;
+            text-decoration: none;
+            /* float: right; */
+            padding: 30px 35px;
+            color: rgb(49, 49, 49);
+        }
+        .navbar ul li a:hover{
+            color: #fc8019;
+        }
+        
+        .grayBg{
+            background-color: #494d60;
+            overflow: auto;
+            height: 290px;
+        }
+        
+        #head1{
+            font-size: 28px ;
+            font-weight: 700;
+            color: whitesmoke;
+            margin-top: 82px;
+            margin-left: 70px;
+        }
+        #head2{
+            font-weight: 400;
+            font-size: 15px;
+            color: whitesmoke;
+            margin-left: 70px;
+            margin-bottom: 18px;
+
+        }
+        .search{
+            display: inline-flex;
+        }
+        #location{
+            margin-left: 70px;
+            height: 38px;
+            width: 300px;
+            padding-left: 20px;
+        }
+        #location{
+            cursor: pointer;
+        }
+
+        #btn1{
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            height: 42px;
+            width: 110px;
+            background-color: #fc8019;
+            border: none;
+            margin-left: -1px;
+            margin-top: 1px;
+            margin-bottom: 10px;
+            color: whitesmoke; 
+        }
+        #btn1:hover{
+            cursor: pointer;
+        }
+        .lightBg{
+            background-color: #f7f7f7;
+            padding: 7px 0px;
+        }
+        .loc{
+            margin: 10px 70px;
+            font-size: 10px;
+            color: #93959f;
+        }
+        .loc span:hover{
+            color: black;
+            cursor: pointer;
+        }
+        .loc .selected{
+            color: black;
+        }
+        .about{
+            margin: 60px 70px;
+        }
+        .about .head{
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .about .para{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            color: #686b78;
+            padding-right: 100px
+        }
+        .cell{
+            border: 2px solid black;
+            margin: 60px 52px;
+        }
+        .cell .head{
+            margin-left: 20px;
+            font-size: 28px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            letter-spacing: -.4px;
+            color: #282c3f;
+        }
+        
+        .cell .row{
+            border: 1px solid red;
+        }
+        .cell .col{
+            border: 1px solid white;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            margin: 12px;
+            width: 380px;
+            height: 380px;
+            overflow: hidden;
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .cell .col img{
+            height: 380px;
+            width: 100%;
+            transition: 0.2s all ease-in-out
+        }
+        .imgname{
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%)    
+        }
+        .cell .col img:hover{
+            transform: scale(1.15);
+        }
+
+        .container1{
+            border: 2px solid black;
+            margin: 60px 65px;
+        }
+        .container1 .head{
+            border: 1px solid red;
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -.4px;
+            color: #282c3f;
+        }
+        .container1 .row{
+            border: 2px solid blue;
+        }
+        .container1 .col{
+            border: 1px solid green;
+            display: inline-block;
+            width: 32.5%;
+            margin: 0px 0px;
+            margin-left: -40px;
+            margin-right: 40px;
+        }
+        .container1 .col ul{
+            list-style: none;
+        }
+        .container1 .col ul li{
+            
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .container1 .col ul li a{
+            text-decoration: none;
+            color: #686b78;
+        }
+        .container1 .col ul li a:hover{
+            color: black;
+        }
+        .container1 span {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+                <span class="name">SWIGGY</span>
+            <ul>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="grayBg">
+            <h2 id="head1">Great restaurants in Pune, delivering to you</h2>
+            <h4 id="head2">
+                Set exact location to find the right restaurants near you.
+            </h4>
+            <div class="search">
+                <input type="text" id="location" name="location" placeholder="Enter street name, area etc...">
+                <button id="btn1">Find Food</button>
+            </div>
+        </div>
+        <div class="lightBg">
+            <div class="loc">
+                <span>Home</span>
+                /
+                <span class="selected">Pune</span>
+            </div>
+        </div>
+        <div class="about">
+            <div class="head">About the food culture in Pune</div>
+            <div class="para">Order food & beverages online from restaurants near & around you. We deliver food from your neighborhood local joints, your favorite cafes, luxurious & elite restaurants in your area. Exciting bit? We place no minimum order restrictions! Order in as little (or as much) as you?d like. We?ll Swiggy it to you!</div>
+        </div>
+        <div class="cell">
+            <div class="head">
+                Our picks for you
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <img src="/Swiggy/Img/home1.webp" alt="Error">
+                        <div class="imgname">OFFERS NEAR YOU</div>
+                    </div>
+                    <div class="col">
+                        <img src="/Swiggy/Img/home2.webp" alt="Error">
+                        <div class="imgname">TOP RATED</div>
+                    </div>
+                    <div class="col">
+                        <img src="/Swiggy/Img/home3.webp" alt="Error">
+                        <div class="imgname">SUPERFAST DELIVERY</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="/Swiggy/Img/home4.webp" alt="Error">
+                        <div class="imgname">BIRYANI</div>
+                    </div>
+                    <div class="col">
+                        <img src="/Swiggy/Img/home5.webp" alt="Error">
+                        <div class="imgname">NORTH INDIAN</div>
+                    </div>
+                    <div class="col">
+                        <img src="/Swiggy/Img/home6.webp" alt="Error">
+                        <div class="imgname">SOUTH INDIAN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="head">
+                Where might we find you?
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li><a href="#">Wanowrie</a></li>
+                        <li><a href="#">Camp</a></li>
+                        <li><a href="#">Kothrud</a></li>
+                        <li><a href="#">Sangvi</a></li>
+                        <li><a href="#">Kondhwa</a></li>
+                        <li><a href="#">Bavdhan</a></li>
+                        <li><a href="#">Wagoli</a></li>
+                        <li><a href="#">Bopodi</a></li>
+                        <li><a href="#">Viman Nagar</a></li>
+                        <li><a href="#">Kharadi</a></li>
+                        <li><a href="#">Baner</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li><a href="#">Koregaon Park</a></li>
+                        <li><a href="#">Warje</a></li>
+                        <li><a href="#">Vishranwadi</a></li>
+                        <li><a href="#">Bibwewadi</a></li>
+                        <li><a href="#">Swargate</a></li>
+                        <li><a href="#">Bhosari</a></li>
+                        <li><a href="#">Narhe</a></li>
+                        <li><a href="#">PCMC</a></li>
+                        <li><a href="#">Aundh</a></li>
+                        <li><a href="#">Shivaji Nagar</a></li>
+                        <li><a href="#">Magarpatta</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li><a href="#">Hadapsar</a></li>
+                        <li><a href="#">Pimple Saudagar</a></li>
+                        <li><a href="#">Nanded City</a></li>
+                        <li><a href="#">Wakad</a></li>
+                        <li><a href="#">Nigdi</a></li>
+                        <li><a href="#">Sinhgad Road</a></li>
+                        <li><a href="#">Hinjewadi</a></li>
+                        <li><a href="#">Dhankawadi</a></li>
+                        <li><a href="#">Kalyani Nagar</a></li>
+                        <li><a href="#">Hinjewadi Phase 3</a></li>
+                </ul></div>
+            </div>
+        </div>
+        <!-- <div class="container1"><span>Popular restaurants in and around Pune</span> </div> -->
+        
+    </main>
+</body>
+</html>

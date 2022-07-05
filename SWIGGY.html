@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=PT+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0px 0px;
+            font-family: 'Noto Sans', sans-serif;
+
+        }
+
+        .logo {
+            display: inline-block;
+            position: absolute;
+            left: 80px;
+            margin: 4px 5px;
+            /* border: 1px solid black; */
+
+        }
+
+        .logo img {
+            height: 70px;
+            transition: 0.2s all ease-in-out;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .loc {
+            display: inline-block;
+            position: absolute;
+            margin: 28px;
+            left: 160px;
+        }
+
+        .loc a {
+            text-decoration: none;
+            color: #686B78;
+        }
+
+        .loc a strong {
+            color: black;
+            border-bottom: 3px solid;
+            padding-bottom: 3px;
+        }
+
+        #nav1btn {
+            display: inline-block;
+
+            /* border: 2px solid lightgray; */
+            position: absolute;
+            right: 60px;
+            /* margin: 5px; */
+            padding: 20px 0px;
+        }
+
+        #nav1 {
+            background-color: white;
+            border-bottom: 1px solid lightgray;
+            display: inline-block;
+            position: fixed;
+            height: 80px;
+            width: 100%;
+        }
+
+        #btn1 {
+            list-style: none;
+        }
+
+        #btn1 li {
+            display: inline-block;
+            margin: 5px 8px;
+            font-weight: 600;
+        }
+
+        #btn1 a {
+            text-decoration: none;
+            font-size: 18px;
+            padding: 30px 30px;
+            color: #3D4152;
+        }
+
+        #btn1 a:hover {
+            color: #FC8019;
+        }
+
+        #blueBg {
+            /* border: 5px solid navy; */
+            background-color: #171A29;
+            display: inline-block;
+            margin-top: 80px;
+            width: 100%;
+        }
+
+        .advimg {
+            display: inline-block;
+            position: relative;
+            left: 60px;
+            /* margin-top: 40px; */
+            margin: 30px 0px;
+        }
+
+        .tran {
+            /* border: 2px solid pink; */
+            margin: 25px;
+        }
+
+        .tran a {
+            display: inline-block;
+            margin-bottom: 0px;
+            transition: 0.2s all ease-in-out;
+        }
+
+        .tran a:hover {
+            transform: scale(1.03);
+        }
+
+        .advimg img {
+            width: 340px;
+            /* height: 260px; */
+        }
+
+        #nav2 {
+            margin: 30px 80px;
+            /* position: absolute; */
+            display: inline-block;
+            /* height: 100px; */
+
+            width: 90%;
+            /* border: 2px solid green; */
+            border-bottom: 1px solid rgb(226, 224, 224);
+        }
+
+        #nav2btn {
+            display: inline-block;
+
+            /* border: 1px solid black; */
+            position: absolute;
+            right: 100px;
+            margin: 18px 0px;
+            /* padding: 20px 0px; */
+        }
+
+        .heading1 {
+            margin: 10px 0px;
+        }
+
+        .heading1,
+        .heading1 h1 {
+            display: inline-block;
+        }
+
+        #btn2 {
+            list-style: none;
+        }
+
+        #btn2 li {
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        #btn2 a {
+            text-decoration: none;
+            margin: 0px 25px;
+            padding-bottom: 17px;
+            color: #686b78;
+            ;
+        }
+
+        #btn2 a:hover {
+            color: rgb(65, 65, 65);
+
+        }
+
+        #btn2 a.active {
+            color: rgb(65, 65, 65);
+            border-bottom: 2px solid black;
+        }
+
+        .filter:hover {
+            color: #FC8019;
+        }
+        .container{
+            /* border: 3px solid black; */
+            margin: 0px 60px;
+        }
+        .row{
+            /* border:3px solid pink; */
+            /* position: relative; */
+            margin-bottom: 50px;
+        }
+        .col{
+            border: 1px solid white;
+            display: inline-block;
+            /* position: relative; */
+            padding: 20px 20px 56px;
+            padding-top: 10px;
+            margin: 0px 10px;
+            color: white;
+            font-size: 17px;
+        }
+        .col:hover{
+            border: 1px solid lightgray;
+            cursor: pointer;
+            color: #5d8ed5;
+            font-weight: 700;
+        }
+        .col img{
+            height: 200px;
+        }
+        .name{
+            /* border: 1px solid red; */
+            font-size: 20px;
+            margin-top: 6px ;
+            font-weight: 500;
+            color: #171A29;
+        }
+        .food{
+            /* border: 1px solid red; */
+            font-size: 15px;
+            color: #282c3f;
+            font-weight: 400;
+        }
+        .rating{
+            /* border: 1px solid red; */
+            border-bottom: 1px solid lightgray;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            padding-bottom: 16px;
+            font-weight: 400;
+        }
+        .rating strong{
+            background-color: #3D4152;
+            display: inline-block;
+            padding: 1px 3px;
+            font-size: 15px;
+            color: white;
+        }
+        .rating ul{
+            /* border: 1px solid blue; */
+            display: inline-block;
+            margin-left: 5px;
+            padding-inline-start: 12px;
+        }
+        .rating ul li{
+            /* border: 1px solid red; */
+            display: inline-block;
+            margin: 0px 8px;
+            font-size: 15px;
+            color: #535665;
+        }
+        .middot{
+            font-weight: 800;
+        }
+        .rupee{
+            font-size: 18px;
+        }
+        .offer{
+            margin-top: 20px;
+            font-size: 16.5px;
+            color: #8a584b;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="nav1">
+            <!-- Left for Logo -->
+            <div class="logo">
+                <a href="#">
+                    <img src="/Swiggy/Img/swiggy.ico" alt="Error">
+                </a>
+            </div>
+            <!-- loc for location -->
+            <div class="loc">
+                <a href="#"><strong>Ravet</strong>
+                    <span> &nbsp; Vishal Nagar Dehu Road Maharashtra...</span></a>
+            </div>
+            <!-- Right for nav buttons -->
+            <div id="nav1btn">
+                <ul id="btn1">
+                    <li><a href="#">Search</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="blueBg">
+        <div class="advimg">
+            <div class="tran">
+                <a href="#">
+                    <img src="/Swiggy/Img/d1_img1.webp" alt="Error">
+                </a>
+            </div>
+        </div>
+        <div class="advimg">
+            <div class="tran">
+                <a href="#">
+                    <img src="/Swiggy/Img/d1_img2.webp" alt="Error">
+                </a>
+            </div>
+        </div>
+        <div class="advimg">
+            <div class="tran">
+                <a href="#">
+                    <img src="/Swiggy/Img/d1_img3.jpg" alt="Error">
+                </a>
+            </div>
+        </div>
+        <div class="advimg">
+            <div class="tran">
+                <a href="#">
+                    <img src="/Swiggy/Img/d1_img4.webp" alt="Error">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="nav2">
+        <div class="heading1">
+            <h1>20 restaurants</h1>
+        </div>
+        <div id="nav2btn">
+            <ul id="btn2">
+                <li><a href="#" class="active">Relevance</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Rating</a></li>
+                <li><a href="#">Cost: Low To High</a></li>
+                <li><a href="#">Cost: High To Low</a></li>
+                <li><a href="#"><strong class="filter">Filters</strong></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont1.webp" alt="Error">
+                </div>
+                <div class="name">Best Belgaian Waffle
+                </div>
+                <div class="food">Desserts, Bakery, Bevetages</div>
+                <div class="rating">
+                    <strong>&#9733;4.3</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>33 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>300 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont2.jpg" alt="Error">
+                </div>
+                <div class="name">Kwality Walls Ice Cream Shop
+                </div>
+                <div class="food">Ice Cream</div>
+                <div class="rating">
+                    <strong>&#9733;4.0</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>22 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont3.jpg" alt="Error">
+                </div>
+                <div class="name">Sprinkles & Sparkles
+                </div>
+                <div class="food">Desserts, Bakery, Ice Cream</div>
+                <div class="rating">
+                    <strong>&#9733;4.3</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>43 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>500 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont4.webp" alt="Error">
+                </div>
+                <div class="name">Krishna veg
+                </div>
+                <div class="food">South Indian, North Indian</div>
+                <div class="rating">
+                    <strong>&#9733;3.8</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>33 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>250 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont5.webp" alt="Error">
+                </div>
+                <div class="name">Hotel Nisarg (Special Misal)
+                </div>
+                <div class="food">Fast Food</div>
+                <div class="rating">
+                    <strong>&#9733;4.2</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>34 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>150 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont6.webp" alt="Error">
+                </div>
+                <div class="name">Punjabi TREAT
+                </div>
+                <div class="food">Punjabi, North Indian</div>
+                <div class="rating">
+                    <strong>&#9733;3.7</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>37 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>250 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont7.webp" alt="Error">
+                </div>
+                <div class="name">PRADEEP SWEETS PVT LTD
+                </div>
+                <div class="food">Sweets</div>
+                <div class="rating">
+                    <strong>&#9733;4.5</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>39 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>150 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont8.webp" alt="Error">
+                </div>
+                <div class="name">SOUTH BREKFAST
+                </div>
+                <div class="food">South Indian</div>
+                <div class="rating">
+                    <strong>&#9733;3.4</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>39 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>150 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont9.webp" alt="Error">
+                </div>
+                <div class="name">Ni Hao China
+                </div>
+                <div class="food">Chinese</div>
+                <div class="rating">
+                    <strong>&#9733;3.6</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>26 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>250 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont10.webp" alt="Error">
+                </div>
+                <div class="name">Budget Meals
+                </div>
+                <div class="food">Combo, Biryani</div>
+                <div class="rating">
+                    <strong>&#9733;3.8</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>34 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont11.webp" alt="Error">
+                </div>
+                <div class="name">Cafe Durga, Ravet
+                </div>
+                <div class="food">South Indian, Continental</div>
+                <div class="rating">
+                    <strong>&#9733;3.5</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>42 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont12.webp" alt="Error">
+                </div>
+                <div class="name">Balaji Pure Veg Vasu's
+                </div>
+                <div class="food">North Indian, South Indian</div>
+                <div class="rating">
+                    <strong>&#9733;4.1</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>42 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont13.webp" alt="Error">
+                </div>
+                <div class="name">Cafe Coffee Hutt
+                </div>
+                <div class="food">Fast Food</div>
+                <div class="rating">
+                    <strong>&#9733;4.1</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>50 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont14.webp" alt="Error">
+                </div>
+                <div class="name">THE WAFFLE JAR
+                </div>
+                <div class="food">Desserts, Beverages</div>
+                <div class="rating">
+                    <strong>&#9733;3.8</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>39 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont15.webp" alt="Error">
+                </div>
+                <div class="name">Biryani Trip
+                </div>
+                <div class="food">Biryani</div>
+                <div class="rating">
+                    <strong>&#9733;4.6</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>36 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>350 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont16.jpg" alt="Error">
+                </div>
+                <div class="name">Kabab King
+                </div>
+                <div class="food">Kebabs, Tandoor</div>
+                <div class="rating">
+                    <strong>&#9733;3.2</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>42 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>250 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont17.webp" alt="Error">
+                </div>
+                <div class="name">Momo Monk
+                </div>
+                <div class="food">Chinese, Snacks</div>
+                <div class="rating">
+                    <strong>&#9733;3.8</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>26 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>180 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont18.webp" alt="Error">
+                </div>
+                <div class="name">Snack House
+                </div>
+                <div class="food">Fast Food, Snacks</div>
+                <div class="rating">
+                    <strong>&#9733;3.9</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>45 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>180 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont19.webp" alt="Error">
+                </div>
+                <div class="name">COFFEE CLUB
+                </div>
+                <div class="food">Indian</div>
+                <div class="rating">
+                    <strong>&#9733;2.5</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>45 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>200 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+            <div class="col">
+                <div>
+                    <img src="/Swiggy/Img/cont16.jpg" alt="Error">
+                </div>
+                <div class="name">Hotel Platinum
+                </div>
+                <div class="food">North Indian, Chinese</div>
+                <div class="rating">
+                    <strong>&#9733;4.1</strong>
+                    <ul>
+                        <li class="middot" >&#183;</li>
+                        <li>47 MINS</li>
+                        <li class="middot">&#183;</li>
+                        <li><span class="rupee">&#8377;</span>400 FOR TWO</li>
+                    </ul>
+                </div>
+                <div class="offer">
+                    50% off| Use WELCOME50
+                </div>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QUICK VIEW
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
